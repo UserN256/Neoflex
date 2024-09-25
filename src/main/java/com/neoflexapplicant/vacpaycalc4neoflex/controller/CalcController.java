@@ -22,16 +22,8 @@ public class CalcController {
     public CalcController(CalcService calcService){
         this.calcService = calcService;
     }
+
     @ResponseBody
-    @PostMapping(value = "/calculacte")
-    public ResponseEntity<List<VacPayEntity>> calc() {
-        final List<VacPayEntity> answer = calcService.calcAll();
-
-        return answer != null &&  !answer.isEmpty()
-                ? new ResponseEntity<>(answer, HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-
     @GetMapping(value = "/calculacte")
     public ResponseEntity<List<VacPayEntity>> calcget(
         @RequestParam("averageSalary") BigDecimal avgSalaryPerYear,

@@ -24,19 +24,6 @@ public class CalcServiceImpl implements CalcService {
     public final BigDecimal NDFLmultiplier = new BigDecimal("0.87");
 
     @Override
-    public List<VacPayEntity> calcAll(){
-        List<VacPayEntity> list = new ArrayList<>();
-
-        BigDecimal value = new BigDecimal("15300");
-        value = value.divide(numberOfMonths,2, RoundingMode.HALF_UP);
-        value = value.divide(avgWorkingDaysPerMonth, 2, RoundingMode.HALF_UP);
-
-        list.add(new VacPayEntity("",value));
-
-        return list;
-    }
-
-    @Override
     public List<VacPayEntity> calcAll(BigDecimal avgSalaryPerYear, int numOfVacationDays){
         List<VacPayEntity> list = new ArrayList<>();
 

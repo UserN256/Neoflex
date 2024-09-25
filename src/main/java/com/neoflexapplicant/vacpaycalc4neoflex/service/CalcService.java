@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CalcService {
-    public List<VacPayEntity> calcAll();
 
     List<VacPayEntity> calcAll(BigDecimal avgSalaryPerYear, int numOfVacationDays);
 
